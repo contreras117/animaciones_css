@@ -1,0 +1,49 @@
+body{
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.pelota{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: 0.5s;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+
+  position: absolute;
+}
+
+.pelota.a{
+  background: lightblue;
+  left: 0;
+}
+.pelota.b{
+  background: lightcoral;
+  right: 0;
+}
+
+.canasta{
+  border: 1px solid red;
+  position: relative;
+  height: 200px;
+  transform: rotate(30deg) skew(15deg) translate(100px) scale(1.5);
+}
+
+.canasta:hover .pelota{
+  width: 200px;
+  height: 200px;
+}
+
+.canasta:hover .pelota.a{
+  left: calc(50% - 200px);
+}
+
+.canasta:hover .pelota.b{
+  right: calc(50% - 200px);
+}

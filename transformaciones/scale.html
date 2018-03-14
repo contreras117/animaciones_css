@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scale</title>
+
+  <style>
+    body{
+      margin: 0;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container{
+      border: 1px solid red;
+    }
+
+    /* Buena practica poner las animaciones hover sobre un elemento padre, 
+      para que no se pierda el hover al realizar la animacion */
+    .container:hover .cuadrado{
+      transform: scale(1.2);
+      transform: scale(2, .5);
+    }
+
+    .cuadrado{
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px;
+      transition: .3s;
+    }
+
+
+  
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado">
+      Hola mundo!
+    </div>
+  </div>
+</body>
+</html>
