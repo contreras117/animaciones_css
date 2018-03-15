@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animaciones multiples</title>
+
+  <style>
+    body{
+      margin: 0;
+      display: grid;
+      align-items: start;
+      height: 100vh;
+      color: white;
+    }
+
+    .container{
+      border: 1px solid red; 
+      width: 100%;
+    }
+
+    /* Buena practica poner las animaciones hover sobre un elemento padre, 
+      para que no se pierda el hover al realizar la animacion */
+    .container:hover .cuadrado{
+      animation-play-state: paused;
+    }
+
+    .cuadrado{
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      animation-name: cuadrado, rebote;
+      animation-duration: 3s, .3s;
+
+      animation-iteration-count: infinite, 20;
+      animation-timing-function: linear, ease-in-out;
+      animation-direction: alternate;
+
+      /* animation-fill-mode: forwards; */
+
+      /* animation-play-state: running; */
+    }
+
+    @keyframes cuadrado{
+      0%{
+        left: 0
+      }
+      100%{
+        left: calc(100% - 180px);
+      }
+    }
+
+    @keyframes rebote {
+      /* 0%{ */
+      from {
+        transform: translateY(0);
+      }
+      /* 100%{ */
+      to{
+        transform: translateY(100px)
+                   scale(1, 0.8);
+      }
+    }
+
+    @keyframes inflar {
+      from{
+        transform: scale(1);
+      }
+      to{
+        transform: scale(1.3)
+      }
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado" id="pelota">
+      Hola mundo!
+    </div>
+  </div>
+  <script>
+    const $pelota=document.getElementById("pelota");
+    /* $pelota.addEventListener('animationstart', (event) => {
+    $pelota.addEventListener('animationiteration', (event) => { */
+    $pelota.addEventListener('animationend', (event) => {
+      if(event.animationName == 'rebote')
+      {
+        $pelota.style.animationName = 'cuadrado, inflar';
+        $pelota.style.animationDuration = '3s';
+      }
+    });
+  </script>
+</body>
+</html>

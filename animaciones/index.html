@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Punto de origen</title>
+
+  <style>
+    body{
+      margin: 0;
+      display: grid;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container{
+      border: 1px solid red; 
+      width: 100%;
+    }
+
+    /* Buena practica poner las animaciones hover sobre un elemento padre, 
+      para que no se pierda el hover al realizar la animacion */
+    .container:hover .cuadrado{
+      animation-play-state: paused;
+    }
+
+    .cuadrado{
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      animation-name: cuadrado;
+      animation-duration: 2s;
+      animation-delay: .3s;
+
+      animation-iteration-count: 1;
+      animation-iteration-count: infinite;
+
+      animation-timing-function: ease;
+      animation-timing-function: ease-in;
+      animation-timing-function: ease-out;
+      animation-timing-function: ease-in-out;
+      animation-timing-function: linear;
+      animation-timing-function: steps(60);
+
+      /* http://cubic-bezier.com */
+      /* animation-timing-function: cubic-bezier(0.11, 0.85, 0.78, 0.40); */
+      animation-timing-function: cubic-bezier(.93,-0.54,.08,1.54);
+
+
+      /* animation-direction: normal; */
+      /* animation-direction: reverse; */
+      animation-direction: alternate;
+
+      animation-fill-mode: forwards;
+
+      /* animation-play-state: running; */
+    }
+
+    @keyframes cuadrado{
+      0%{
+        left: 0
+      }
+      100%{
+        left: calc(100% - 180px);
+      }
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado">
+      Hola mundo!
+    </div>
+  </div>
+</body>
+</html>

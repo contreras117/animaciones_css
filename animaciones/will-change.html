@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animaciones multiples</title>
+
+  <style>
+    body{
+      margin: 0;
+      display: grid;
+      align-items: start;
+      height: 100vh;
+      color: white;
+    }
+
+    .container{
+      border: 1px solid red; 
+      width: 100%;
+    }
+
+    /* Buena practica poner las animaciones hover sobre un elemento padre, 
+      para que no se pierda el hover al realizar la animacion */
+    .container:hover .cuadrado{
+      opacity: 0;
+      transform: scale(1.2);
+    }
+
+    .cuadrado{
+      width: 200px;
+      height: 200px;
+      background: lightblue;
+      margin: 20px 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: .3s;
+
+      /* Propiedades animables: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties */
+
+      /* Propiedad para optimizar el renderizado y le avisa al navegador que el elemento va acambiar; */
+      /* Las animaciones que estan optimizadas son opacity y transform. */
+      will-change: opacity, transform;
+
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado" id="pelota">
+      Hola mundo!
+    </div>
+  </div>
+</body>
+</html>
