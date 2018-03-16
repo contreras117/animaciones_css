@@ -9,34 +9,14 @@
 </head>
 <body>
   <div class="container">
-    <div id="pelota" class="pelota">
-
+    <div id="pelota" class="pelota"></div>
+    <div class="buttons">
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <button id="stop">Stop</button>
+      <button id="reverse">Reverse</button>
     </div>
   </div>
-
-  <script>
-    const $pelota = document.getElementById("pelota");
-
-    //element.animate(keyframes[], option{})
-    $pelota.animate([
-      /* from */
-      {
-        transform: 'translateX(0)'
-      },
-      /* to */
-      {
-        transform: 'translateX(500px)'
-      }
-    ],{
-      duration: 1000,
-      delay: 300,
-      direction: 'normal',
-      easing: 'linear',
-      interations: Infinity,
-      fill: 'forwards',
-      iterationStart: .5
-      /* endDelay: 5000 */
-    });
-  </script>
+  <script src="code.js"></script>
 </body>
 </html>
