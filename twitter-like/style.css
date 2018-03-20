@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.like{
+    cursor: pointer;
+    /* width: 100px;
+    height: 100px; */
+    height: 50px;
+    width: 50px;
+    background-image: url('corazon.png');
+    background-size: 1450px 50px; /* Se redujo la imagen a la mitad para que se aprecie de forma correcta en pantallas con doble densidad de pixeles. */
+}
+
+.like.is-liked{
+    animation: like .8s steps(28) forwards;
+}
+
+@keyframes like{
+    100%{
+        background-position-x: -2800px;
+        background-position-x: right;
+    }
+}
